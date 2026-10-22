@@ -1,0 +1,10 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Connected – Social Untold</title><link rel="stylesheet" href="style.css"></head><body><main><nav><a href="./">Social Untold</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+<h1>Sign-in complete</h1>
+<p>Your account has been connected to Social Untold Publisher. You can close this page.</p>
+<p class="muted">Setup code (only needed by the person finishing setup):</p>
+<code id="c">–</code>
+<script>
+const p=new URLSearchParams(location.search);
+document.getElementById('c').textContent=p.get('code')||(p.get('error')?'Error: '+p.get('error')+' '+(p.get('error_description')||''):'No code in this link.');
+</script>
+<p class="muted" style="margin-top:48px">Contact: dilgrover@gmail.com</p></main></body></html>
