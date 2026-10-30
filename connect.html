@@ -16,7 +16,7 @@
 const KEYS={sandbox:"sbawht1jczstx3c98q",live:""};
 const app=new URLSearchParams(location.search).get("app")||"sandbox";
 const q=new URLSearchParams({client_key:KEYS[app]||KEYS.sandbox,scope:"user.info.basic,video.upload,video.publish",response_type:"code",
-  redirect_uri:"https://dilgrover.github.io/social-untold-site/callback.html",state:"socialuntold"});
+  redirect_uri:"https://dilgrover.github.io/social-untold-site/callback.html",state:"socialuntold",disable_auto_auth:"1"});
 document.getElementById("go").href="https://www.tiktok.com/v2/auth/authorize/?"+q;
 </script>
 <p class="muted" style="margin-top:48px">Contact: dilgrover@gmail.com</p></main></body></html>
