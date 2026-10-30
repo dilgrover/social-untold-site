@@ -1,0 +1,22 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Connect TikTok – Social Untold</title><link rel="stylesheet" href="style.css">
+<style>.btn{display:inline-block;margin:18px 0;padding:14px 22px;border-radius:12px;background:#111;color:#fff;font-weight:700;text-decoration:none}.btn:hover{opacity:.9}ol li{margin:6px 0}</style></head>
+<body><main><nav><a href="./">Social Untold</a><a href="connect.html">Connect TikTok</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+<h1>Connect the Social Untold TikTok account</h1>
+<p>Social Untold Publisher posts Social Untold's own short videos (UK careers and desi life in the UK) to the Social Untold TikTok account on a schedule. Only the channel owner uses it.</p>
+<h2>How it works</h2>
+<ol>
+<li><b>Connect:</b> the owner signs in with TikTok and approves access (Login Kit, <code style="display:inline;padding:0 4px;border:0">user.info.basic</code>).</li>
+<li><b>Schedule:</b> each finished video and its caption are added to the Social Untold publishing queue.</li>
+<li><b>Post:</b> at the planned time the publisher uploads the video to the connected account (Content Posting API, <code style="display:inline;padding:0 4px;border:0">video.upload</code> and <code style="display:inline;padding:0 4px;border:0">video.publish</code>), with TikTok's privacy and interaction settings, and marks AI-generated content.</li>
+</ol>
+<a class="btn" id="go" href="#">Connect with TikTok</a>
+<p class="muted">We only read the account's basic profile (to confirm which account is connected) and post videos the owner created. Nothing is posted to any other account. See <a href="privacy.html">Privacy</a> and <a href="terms.html">Terms</a>.</p>
+<script>
+// Client keys are public identifiers (they appear in every TikTok sign-in link). ?app=live uses the approved app.
+const KEYS={sandbox:"sbawht1jczstx3c98q",live:""};
+const app=new URLSearchParams(location.search).get("app")||"sandbox";
+const q=new URLSearchParams({client_key:KEYS[app]||KEYS.sandbox,scope:"user.info.basic,video.upload,video.publish",response_type:"code",
+  redirect_uri:"https://dilgrover.github.io/social-untold-site/callback.html",state:"socialuntold"});
+document.getElementById("go").href="https://www.tiktok.com/v2/auth/authorize/?"+q;
+</script>
+<p class="muted" style="margin-top:48px">Contact: dilgrover@gmail.com</p></main></body></html>
